@@ -1,0 +1,19 @@
+{
+  "name": "yelp-fusion-challenge",
+  "version": "1.0.0",
+  "description": "App using the Yelp Fusion API for a code challenge",
+  "main": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matheus Soares",
+  "license": "ISC",
+  "dependencies": {
+    "fetch": "^1.1.0",
+    "node-fetch": "^2.6.0"
+  }
+}
