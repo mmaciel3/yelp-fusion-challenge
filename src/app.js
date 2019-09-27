@@ -10,7 +10,7 @@ app.get('/top5', async (req, res) => {
     try {
         const top5Shops = await businessSearch.getTop5IceCreamShopsInAlpharetta()
             .then(response => businessReview.getBusinessesWithReviews(response));
-
+            
         res.status(200).send(top5Shops);
     } catch (error) {
         console.log('Error when processing request:', error);
@@ -18,7 +18,7 @@ app.get('/top5', async (req, res) => {
     }
 });
 
-app.listen(port, () => {
+exports.server = app.listen(port, () => {
     if (!envVariables.apiKey) {
         const errorMessage = 'ERROR: missing required API key. Your Yelp Fusion API key must be ' +
             'placed in a file called \"env.json\" located in the root of the project. ' +

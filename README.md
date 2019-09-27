@@ -11,11 +11,11 @@ The business information should be output in the order received from the API res
 
 # How to run the app
 
-### 1. Pre-requirements
+### Pre-requirements
 1. Have [Git](https://git-scm.com/downloads) installed.
 2. Have [Nodejs](https://nodejs.org/en/download/) installed.
 
-### 2. First setup
+### First setup
 1. Clone this repository.
 2. Create a file called ``env.json`` in the root of the project. This JSON file must contain a property called "apiKey" and the value of this property must be your Yelp Fusion API key. For example:
 ```json
@@ -26,15 +26,15 @@ The business information should be output in the order received from the API res
 3. Open a terminal window and browse to the directory where you cloned this repository.
 4. Run command ``npm install``. This will download all the dependencies needed by this project.
 
-### 3. Running the application
+### Running the application
 1. Open a terminal window and browse to the directory where you cloned this repository.
 2. Run command ``npm start``. This will start the server.
 
-### 4. Calling the API
+### Calling the API
 After starting the application, you can now call the API by issuing a GET request to http://localhost:3000/top5.
 
 # Technical details
-I have tried to keep things as simple as possible. For this reason, I'm only using 2 NPM modules: express (to create a server with my API), and node-fetch (to issue HTTP requests to the Yelp Fusion API).
+I have tried to keep things as simple as possible. For this reason, I'm only using 2 NPM modules in the production code: express (to create a server with my API), and node-fetch (to issue HTTP requests to the Yelp Fusion API).  
 I'm also not using any ES6 features so that I don't need to add a dependency on Babel.
 
 The code structure is quite simple:
@@ -49,3 +49,15 @@ The code structure is quite simple:
 >| Name     | Type   | Description |
 >| -------- | ------ | ----------- |
 >| location | string | Required if either latitude or longitude is not provided. This string indicates the geographic area to be used when searching for businesses. Examples: "New York City", "NYC", "350 5th Ave, New York, NY 10118". ***Businesses returned in the response may not be strictly within the specified location.*** |
+
+## Tests
+This project contains both integration and unit tests.
+
+Integration tests will actually call the Yelp Fusion API, so they may fail if the API is down for some reason. These tests are located at folder [/test/integration](./test/integration/).  
+As a pre-requisite to running those tests, you need to have a file called ``env.json`` with your API key in the root of the project, as explained in the [First Setup section](#first-setup).  
+The integration suite can be executed with the command ``npm run test:integration``.
+
+Unit tests test each module independently, mocking any dependencies such as the call to the Fusion API, and therefore do not require an API key. These tests are located at folder [/test/unit](./test/unit/).  
+To run the unit tests, you should execute command ``npm run test:unit``.
+
+Running both unit and integration tests is also possible by executing command ``npm test``.
