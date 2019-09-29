@@ -58,7 +58,7 @@ Integration tests will actually call the Yelp Fusion API, so they may fail if th
 As a pre-requisite to running those tests, you need to have a file called ``env.json`` with your API key in the root of the project, as explained in the [First Setup section](#first-setup).  
 The integration suite can be executed with the command ``npm run test:integration``.
 
-Unit tests test each module independently, mocking any dependencies such as the call to the Fusion API, and therefore do not require an API key. These tests are located at folder [/test/unit](./test/unit/).  
-To run the unit tests, you should execute command ``npm run test:unit``.
+Unit tests test each module independently, mocking any dependencies such as the call to the Fusion API, and therefore do not require an API key. The ``env.json`` file still needs to exist, but its content can be just an empty JSON.  
+These tests are located at folder [/test/unit](./test/unit/) and can be run by executing the command ``npm run test:unit``.
 
 Running both unit and integration tests at once is also possible by executing command ``npm test``.
