@@ -1,5 +1,5 @@
-const httpClient = require('./httpClient.js');
-const yelpApi = require('./yelpApi.js');
+const httpClient = require('./httpClient');
+const yelpApi = require('./yelpApi');
 
 exports.getTop5IceCreamShopsInAlpharetta = async function () {
     let searchBusinessesUrl = buildSearchBusinessesUrl();

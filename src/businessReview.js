@@ -1,5 +1,5 @@
-const httpClient = require('./httpClient.js');
-const yelpApi = require('./yelpApi.js');
+const httpClient = require('./httpClient');
+const yelpApi = require('./yelpApi');
 
 exports.getBusinessesWithReviews = async function (businesses) {
     let businessesWithReviews = [];
@@ -17,10 +17,12 @@ async function addBusinessReview(business) {
 
     let firstReview = response.reviews[0];
 
-    return {
+    let result = {
         name: business.name,
         address: business.address,
         review: firstReview.text,
         reviewer: firstReview.user.name
     };
+
+    return result;
 }

@@ -1,5 +1,5 @@
-const businessSearch = require('./businessSearch.js');
-const businessReview = require('./businessReview.js');
+const businessSearch = require('./businessSearch');
+const businessReview = require('./businessReview');
 const envVariables = require('../env.json');
 
 const express = require('express');
