@@ -60,4 +60,4 @@ The integration suite can be executed with the command ``npm run test:integratio
 Unit tests test each module independently, mocking any dependencies such as the call to the Fusion API, and therefore do not require an API key. These tests are located at folder [/test/unit](./test/unit/).  
 To run the unit tests, you should execute command ``npm run test:unit``.
 
-Running both unit and integration tests is also possible by executing command ``npm test``.
+Running both unit and integration tests at once is also possible by executing command ``npm test``.
