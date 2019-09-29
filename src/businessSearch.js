@@ -1,16 +1,16 @@
 const httpClient = require('./httpClient');
 const yelpApi = require('./yelpApi');
 
-exports.getTop5IceCreamShopsInAlpharetta = async function () {
-    let searchBusinessesUrl = buildSearchBusinessesUrl();
+exports.getTopIceCreamShopsInAlpharetta = async function (amountOfShops) {
+    let searchBusinessesUrl = buildSearchBusinessesUrl(amountOfShops);
     return await httpClient.runGetRequest(searchBusinessesUrl)
         .then(response => filterResponseAttributes(response));
 }
 
-function buildSearchBusinessesUrl() {
+function buildSearchBusinessesUrl(amountOfShops) {
     const queryCriteria = {
         'sort_by': 'rating',
-        'limit': 5,
+        'limit': amountOfShops,
         'categories': 'icecream',
         'location': 'Alpharetta,GA,USA'
     };

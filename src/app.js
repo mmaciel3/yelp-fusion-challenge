@@ -1,5 +1,4 @@
-const businessSearch = require('./businessSearch');
-const businessReview = require('./businessReview');
+const shops = require('./shops');
 const envVariables = require('../env.json');
 
 const express = require('express');
@@ -8,9 +7,7 @@ const port = 3000;
 
 app.get('/top5', async (req, res) => {
     try {
-        const top5Shops = await businessSearch.getTop5IceCreamShopsInAlpharetta()
-            .then(response => businessReview.getBusinessesWithReviews(response));
-            
+        const top5Shops = await shops.getTop5IceCreamShopsInAlpharettaWithReviews()
         res.status(200).send(top5Shops);
     } catch (error) {
         console.log('Error when processing request:', error);

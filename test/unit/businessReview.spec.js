@@ -18,7 +18,7 @@ describe('Get business with reviews', () => {
 
     afterEach(function () {
         testDouble.reset();
-    })
+    });
 
     it('should build response with details from first review in the API response for one business', (done) => {
         const id = '1';

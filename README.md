@@ -41,6 +41,7 @@ The code structure is quite simple:
 * [app.js](./src/app.js) is the entry point. It contains the Express API route and error handling.
 * [businessReview.js](./src/businessReview.js) contains all the logic related to retrieving reviews for businesses from the Yelp Fusion API.
 * [businessSearch.js](./src/businessSearch.js) has the business logic to get the top 5 icecream shops in Alpharetta, GA, from the Yelp Fusion API.
+* [shops.js](./src/shops.js) orchestrates the calls to ``businessReview.js`` and ``businessSearch.js``.
 * [httpClient.js](./src/httpClient.js) encapsulates the calls to the Yelp Fusion API.
 * [yelpApi.js](./src/yelpApi.js) contains the base URL for the Yelp API. This is in a separate file so that, should Yelp release a new version of the API, we have a single point to be changed.
 
