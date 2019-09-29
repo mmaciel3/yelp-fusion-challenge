@@ -5,7 +5,7 @@ const testDouble = require('testdouble');
 
 chai.use(chaiAsPromised);
 
-describe('Get top 5 ice cream shops in Alpharetta', () => {
+describe('Get top ice cream shops in Alpharetta', () => {
     let yelpApi, httpClient, businessSearch;
     let getExpectedApiUrl = function (amountOfShops) {
         return `basePath/businesses/search?sort_by=rating&limit=${amountOfShops}&categories=icecream&location=Alpharetta%2CGA%2CUSA`;
